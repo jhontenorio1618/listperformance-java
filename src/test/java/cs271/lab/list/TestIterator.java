@@ -77,8 +77,11 @@ public class TestIterator {
     while (i.hasNext()) {
       if (i.next() == 77) {
         i.remove(); // TODO Question: What happens if you use list.remove(Integer.valueOf(77))?
-        // Doing so will throw a CpncurrentModification Exception, since This directly calls remove(Object o) on list,
-        // modifying the collection while an iterator is actively iterating over it.
+        /**
+         * ANSWER: Doing so will throw a CpncurrentModification Exception,
+         *        since This directly calls remove(Object o) on list,
+         *       modifying the collection while an iterator is actively iterating over it.
+         */
       }
     }
     // TODO using assertEquals and List.of, express which values are left in the list

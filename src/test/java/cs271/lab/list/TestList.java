@@ -19,6 +19,11 @@ public class TestList {
   public void setUp() throws Exception {
     list = new ArrayList<Integer>();
     // TODO Question: Also try with a LinkedList - does it make any difference?
+    /**
+     * iN TERMS OF TEST BEHAVIOR THERE IS NO DIFFERENCE, HOWEVER, BECAUSE BOTH ARE DIFFERENT DATA STRUCTURES,
+     * SOME DIFFERENCES WILL BE NOTED SUCH AS INSERTION/DELETION TIME COMPLEXITY WHICH TENDS TO BE FASTER ON ARRAYLIST
+     * THAN LINKLIST, SO ON.
+     */
   }
 
   @After
