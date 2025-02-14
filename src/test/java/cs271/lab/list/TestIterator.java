@@ -77,12 +77,15 @@ public class TestIterator {
     while (i.hasNext()) {
       if (i.next() == 77) {
         i.remove(); // TODO Question: What happens if you use list.remove(Integer.valueOf(77))?
+        // Doing so will throw a CpncurrentModification Exception, since This directly calls remove(Object o) on list,
+        // modifying the collection while an iterator is actively iterating over it.
       }
     }
     // TODO using assertEquals and List.of, express which values are left in the list
     // See TestList.java for examples of how to use List.of; also see the Java List
     // interface for more information
-    fail("Not yet implemented"); // remove this line when done
+    assertEquals(List.of(33, 44,55,66), list);
+    //fail("Not yet implemented"); // remove this line when done
   }
 
   @Test
@@ -96,9 +99,15 @@ public class TestIterator {
     list.add(66);
     double sum = 0;
     int n = 0;
+    final var i =list.iterator();
     // TODO use an iterator and a while loop to compute the average (mean) of the values
     // (defined as the sum of the items divided by the number of items)
     // testNonempty shows how to use an iterator; use i.hasNext() in the while loop condition
+    while(i.hasNext()) {
+      sum += i.next().doubleValue();
+      n++;
+    }
+
     assertEquals(61.3, sum / n, 0.1);
     assertEquals(7, n);
   }
