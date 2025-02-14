@@ -21,8 +21,6 @@ public class TestIterator {
   @Before
   public void setUp() throws Exception {
     list = new LinkedList<Integer>();
-
-
   }
 
   @After
